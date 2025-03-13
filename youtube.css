@@ -91,6 +91,11 @@ p{
   border-style: solid;
   border-color: gray;
   justify-content: space-between;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 50px;
 }
 .left-side{
   background-color: lightblue;
