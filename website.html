@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+  <style>
+    button{
+      width: 100px;
+      height: 40apx;
+      background-color: rgba(195, 195, 195, 0.63);
+      border: 1px;
+      border-style: solid;
+      border-color: rgb(40, 40, 40);
+      border-radius: 2px;
+      box-shadow: rgba(125, 125, 125, 0) 2px 2px 0.2px;
+    }
+  </style>
+</head>
+<body>
+  <button title="hello" onclick="console.log('hello');">Click</button>
+  <p>This is practice of <button>JavaScript</button> coding.</p>
+  
+  <button onclick="console.log('Cart Quantity: ' +noOfItem);">
+    Show quantity
+  </button>
+  <button
+    onclick="noOfItem+=1; console.log('Cart Quantity: ' +noOfItem);">
+    Add to Cart
+  </button>
+  <button onclick="noOfItem+=2; console.log('Cart Quantity: ' +noOfItem)">
+    +2
+  </button>
+  <button onclick="noOfItem-=2; console.log('Cart Quantity: ' +noOfItem)">
+    -2
+  </button>
+  <button onclick="noOfItem=0; console.log('Cart Quantity: 0' )">
+    Reset Cart
+  </button>
+
+  <script>
+    // console.log(4+40);
+    // console.log(`Items ${1+1} : $${(2223+223)/100} `);
+    let noOfItem = 0;
+    console.log(3>5);
+
+    if (5<2) {
+      console.log('wrong info. ');
+    } else {
+      console.log('no option');
+    }
+  </script>
+</body>
+</html>
