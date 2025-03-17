@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game</title>
+  <style>
+    button{
+      display: inline;
+      width: 150px;
+      height: 20px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Let's Play Rock Paper Scissors</h1>
+  <button 
+  onclick="random = Math.random(); 
+  let comMove = '';
+  if (random  >= 0 && random  < 1/3){
+    comMove = 'rock';
+  } else  if (random  >=  1/3 && random  < 2/3){
+    comMove = 'paper';
+} else if (random  >= 2/3 && random  < 1){
+  comMove = 'scissors';
+}
+  console.log(comMove);
+
+  if (comMove == 'rock') {
+    alert('Same <<<>>> Same');
+  } else if(comMove == 'paper'){
+    alert('Loserrr!!');
+  } else{
+    alert('You Winnn!!!');
+  }
+"
+  >
+    Rock
+  </button>
+  <button
+  onclick="random = Math.random(); 
+   comMove = '';
+    if (random  >= 0 && random  < 1/3){
+      comMove = 'rock';
+    } else  if (random  >=  1/3 && random  < 2/3){
+      comMove = 'paper';
+  } else if (random  >= 2/3 && random  < 1){
+    comMove = 'scissors';
+  }
+    console.log(comMove);
+    if (comMove == 'paper') {
+    alert('Same <<<>>> Same');
+  } else if(comMove == 'scissors'){
+    alert('Loserrr!!');
+  } else{
+    alert('You Winnn!!!');
+  }
+  "
+  >
+    Paper
+  </button>
+  <button
+  onclick="random = Math.random(); 
+   comMove = '';
+    if (random  >= 0 && random  < 1/3){
+      comMove = 'rock';
+    } else  if (random  >=  1/3 && random  < 2/3){
+      comMove = 'paper';
+  } else if (random  >= 2/3 && random  < 1){
+    comMove = 'scissors';
+  }
+    console.log(comMove);
+    if (comMove == 'scissors') {
+    alert('Same <<<>>> Same');
+  } else if(comMove == 'rock'){
+    alert('Loserrr!!');
+  } else{
+    alert('You Winnn!!!');
+  }
+  "
+  >
+    Scissors
+  </button>
+
+  <script>
+    // const comp = Math.random();
+  </script>
+</body>
+</html>
