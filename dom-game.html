@@ -28,21 +28,24 @@
   ">
     Scissors
   </button>
+  <p class="js-result"></p>
+  <p class="js-move"></p>
+
+  <p class="js-score"></p>
 
   <button onclick="
       score.wins = 0;
       score.loss = 0;
       score.ties = 0;
-      localStorage.removeItem('score');">
+      localStorage.removeItem('score');
+      updateScoreElement();
+      ">
     Reset Score
   </button>
+
   <script>
 
-    // const score = {
-    //   wins : 0,
-    //   loss : 0,
-    //   ties : 0,
-    // }
+    let result = 'Best Of Luck!!';
     let score = JSON.parse(localStorage.getItem('score'))
       ||
     {
@@ -51,13 +54,8 @@
       ties: 0,
     };
 
-    // if (!score) {
-    //   score = {
-    //     wins : 0,
-    //     loss : 0,
-    //     ties : 0,
-    //   }
-    // }
+    updateScoreElement();
+    document.querySelector('.js-result').innerHTML = result;
 
     console.log(score);
 
@@ -68,35 +66,35 @@
       if (playerMove === "scissors") {
 
         if (comMove === 'scissors') {
-          // alert('Same <<<>>> Same');
+          
           result = 'Same <<< Same';
         } else if (comMove === 'rock') {
-          // alert('Loserrr!!');
+         
           result = 'Loserrr!!';
         } else if (comMove === 'paper') {
-          // alert('You Winnn!!!');
+          
           result = 'You are Winner';
         }
       } else if (playerMove === 'paper') {
         if (comMove === 'paper') {
-          // alert('Same <<<>>> Same');
+          
           result = 'Same <<< Same';
         } else if (comMove === 'scissors') {
-          // alert('Loserrr!!');
+          
           result = 'Loserrr!!';
         } else if (comMove === 'rock') {
-          // alert('You Winnn!!!');
+          
           result = 'You are Winner';
         }
       } else if (playerMove === 'rock') {
         if (comMove === 'rock') {
           result = 'Same <<< Same';
-          // alert('Same <<<>>> Same');
+          
         } else if (comMove === 'paper') {
-          // alert('Loserrr!!');
+          
           result = 'Loserrr!!';
         } else if (comMove === 'scissors') {
-          // alert('You Winnn!!!');
+         
           result = 'You are Winner';
         }
       }
@@ -111,10 +109,24 @@
       console.log(score);
 
       localStorage.setItem('score', JSON.stringify(score));
-
+      
+      updateScoreElement();
+      document.querySelector('.js-result').innerHTML = result;
+      document.querySelector('.js-move').innerHTML = `Your ${playerMove} x Computer's ${comMove}`;
+      
+      /*
       alert(`You choose ${playerMove} and Computer choose ${comMove}.\n\n ${result}
               \n Wins: ${score.wins}, Loss : ${score.loss}, Ties : ${score.ties}`);
+      */
     }
+
+    function updateScoreElement(){
+      document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Loss : ${score.loss}, Ties : ${score.ties}`;
+    }
+
+    // function updateResult() {
+    //   document.querySelector('.js-result').innerHTML = result;
+    // }
 
     function pickCompMove() {
       random = Math.random();
