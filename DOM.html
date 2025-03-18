@@ -5,13 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM</title>
+  <style>
+    .sub-btn{
+      border: none;
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      /* width: 100px; */
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 50px;
+    }
+    .is-sub-button{
+      background-color: rgb(240, 236, 236);
+      color: black;
+    }
+  </style>
 </head>
 
 <body>
   <!-- <button>click</button>
   <button class="js-button">open</button> -->
   <p>Youtube Subscribe Button.</p>
-  <button class="js-sub-button" onclick="Subscribe()">
+  <button class="js-sub-button sub-btn" onclick="Subscribe()">
     Subscribe
   </button>
 
@@ -60,11 +77,14 @@
 
       // if (subButton.innerHTML === 'Subscribe') {
       //   subButton.innerHTML = 'Subscribed';
+      //   subButton.classList.add('is-sub-button');
       // } else {
       //   subButton.innerHTML = 'Subscribe';
-      // }
-      subButton.innerText === 'Subscribe' ?
-        subButton.innerHTML = 'Subscribed' : subButton.innerHTML = 'Subscribe';
+      //   subButton.classList.remove('is-sub-button');
+      //}
+      (subButton.innerHTML === 'Subscribed' )?
+        (subButton.innerHTML = 'Subscribe', subButton.classList.remove('is-sub-button'))
+        : (subButton.innerHTML = 'Subscribed',subButton.classList.add('is-sub-button'));
     }
   </script>
 </body>
