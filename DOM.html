@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+
+<body>
+  <!-- <button>click</button>
+  <button class="js-button">open</button> -->
+  <p>Youtube Subscribe Button.</p>
+  <button class="js-sub-button" onclick="Subscribe()">
+    Subscribe
+  </button>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input type="text" placeholder="Cost of order" class="js-cost" 
+      onkeydown="
+      
+      event.key === 'Enter' && calculateTotal();
+      // if (event.key === 'Enter'){
+      //   calculateTotal();
+      // };
+      ">
+    <button onclick="calculateTotal();">Calculate</button>
+    <p class="js-result"></p>
+
+
+
+  <script>
+
+    function calculateTotal() {
+      const inputEle = document.querySelector('.js-cost');
+      let cost = Number(inputEle.value);
+
+      if (cost < 40) {
+        cost = cost +  10;
+      }
+      console.log(cost);
+
+      document.querySelector('.js-result').innerHTML = `$${cost}`;
+
+    }
+    /*
+    console.log(document.querySelector('button').innerHTML);
+    document.querySelector('.js-button')
+      .innerHTML = 'changed';
+    // document.body.innerHTML ='<button>hello</button>'
+
+    
+    document.body.innerHTML = 'hello.. there///';
+    document.title = 'Good';
+    */
+    function Subscribe() {
+      const subButton = document.querySelector('.js-sub-button');
+
+      // if (subButton.innerHTML === 'Subscribe') {
+      //   subButton.innerHTML = 'Subscribed';
+      // } else {
+      //   subButton.innerHTML = 'Subscribe';
+      // }
+      subButton.innerText === 'Subscribe' ?
+        subButton.innerHTML = 'Subscribed' : subButton.innerHTML = 'Subscribe';
+    }
+  </script>
+</body>
+
+</html>
