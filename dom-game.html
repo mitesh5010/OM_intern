@@ -6,30 +6,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game</title>
   <style>
-    button {
+    body{
+      background-color: white;
+      color: black;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .title{
+      font-weight: bold;
+    }
+    .move-btn {
       display: inline;
-      width: 150px;
-      height: 20px;
+      background-color: transparent;
+      border:3px solid;
+      width: 120px;
+      height: 120px;
+      border-radius: 60px;
       margin: 10px;
+      cursor: pointer;
+    }
+    img{
+      width: 80px;
+      
+    }
+    .result{
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 30px;
+
+    }
+    .move-icon{
+      margin: 20px;
+    }
+    .reset-btn{
+      background-color: rgb(234, 234, 234);
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 15px;
+      margin: 20px;
     }
   </style>
 </head>
 
 <body>
-  <h1>Let's Play Rock Paper Scissors</h1>
-  <button onclick="palyGame('rock');">
-    Rock
+  <h1 class="title">Let's Play Rock Paper Scissors</h1>
+  <button class="move-btn" onclick="palyGame('rock');">
+    <img src="img/rock.png" alt="">
   </button>
-  <button onclick=" palyGame('paper');">
-    Paper
+  <button class="move-btn" onclick=" palyGame('paper');">
+    <img src="img/paper.png" alt="">
   </button>
-  <button onclick="
+  <button class="move-btn" onclick="
     palyGame('scissors');
   ">
-    Scissors
+    <img src="img/scissors.png" alt="">
   </button>
-  <p class="js-result"></p>
-  <p class="js-move"></p>
+  <p class="js-result result"></p>
+  <p class="js-move move-icon">
+    
+  </p>
 
   <p class="js-score"></p>
 
@@ -39,7 +76,8 @@
       score.ties = 0;
       localStorage.removeItem('score');
       updateScoreElement();
-      ">
+      "
+      class="reset-btn">
     Reset Score
   </button>
 
@@ -112,7 +150,9 @@
       
       updateScoreElement();
       document.querySelector('.js-result').innerHTML = result;
-      document.querySelector('.js-move').innerHTML = `Your ${playerMove} x Computer's ${comMove}`;
+      document.querySelector('.js-move').innerHTML = `you<img src="img/${playerMove}.png" alt="">
+     <b>x</b>
+    Computer<img src="img/${comMove}.png" alt="">`;
       
       /*
       alert(`You choose ${playerMove} and Computer choose ${comMove}.\n\n ${result}
