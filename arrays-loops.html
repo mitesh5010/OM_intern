@@ -37,6 +37,7 @@
     //   console.log(element);
     // }
 
+    /*
     const arr = [2,3,5];
     let sum = 0;
 
@@ -46,6 +47,39 @@
       
     }
     console.log(sum);
+
+    for (let i = 0; i < 10; i++) {
+      // const a = i%3;
+      // if (a!=0) {
+      //   continue;
+      // }
+
+      if(i%2 == 0) continue;//dose not count
+      console.log(i);
+      
+    }
+
+    function doubleArr(nums){
+      const numx2 = [];
+      for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        numx2.push(num*2);
+        
+      }
+      return numx2;
+    }
+
+    console.log(doubleArr([1,2]));
+
+    */
+
+    const arr = [ 'mitesh', 'vishal', 'nitin'];
+
+    arr.forEach(
+      function (value) {
+        console.log(value);
+      }
+    )
   </script>
 </body>
 </html>

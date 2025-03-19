@@ -37,7 +37,7 @@
     .move-icon{
       margin: 20px;
     }
-    .reset-btn{
+    .reset-btn, .auto-btn{
       background-color: rgb(234, 234, 234);
       border: none;
       cursor: pointer;
@@ -45,7 +45,8 @@
       font-size: 15px;
       font-weight: bold;
       padding: 15px;
-      margin: 20px;
+      margin-right: 20px;
+      
     }
   </style>
 </head>
@@ -80,6 +81,9 @@
       class="reset-btn">
     Reset Score
   </button>
+  <button class="auto-btn"
+    onclick="autoPlay()"
+  >Auto Play</button>
 
   <script>
 
@@ -181,6 +185,24 @@
       console.log(comMove);
 
       return comMove; // return value may const, veriable, arthmetic . calling return after values cannot executed.
+    }
+
+    //auto-play function
+    let isAutoPlaying = false;
+    let intervalID ;
+
+    function autoPlay() {
+      if (!isAutoPlaying){
+      intervalID = setInterval(
+        function () {
+          const playerMove = pickCompMove();
+          palyGame(playerMove);
+        }, 1000)
+        isAutoPlaying = true;
+      } else {
+        clearInterval(intervalID);
+        isAutoPlaying = false;
+      }
     }
   </script>
 </body>

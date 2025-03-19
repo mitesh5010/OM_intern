@@ -6,7 +6,15 @@
   <title>Functions</title>
 </head>
 <body>
+
+  <button onclick="" class="js-btn">Click</button>  
   <script>
+
+    const btnEle = document.querySelector('.js-btn');
+    btnEle.addEventListener('click',() => {
+      console.log('ok');
+    })
+
     //function learning
     // function calTax(a, b){
     //   console.log(a*b);
@@ -14,6 +22,7 @@
     // calTax(10000,0.5);
     // calTax(500,0.5);
 
+    /*
     //objects learning
     const product = {
       name : 'mitesh',
@@ -32,6 +41,8 @@
     console.log(JSON.stringify(product)); // object to json formate
     const js = JSON.stringify(product);
     console.log(JSON.parse(js)); // json formate to js object
+    */
+
 
   </script>
 </body>
