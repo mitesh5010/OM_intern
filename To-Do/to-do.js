@@ -11,11 +11,11 @@ function renderList() {
     const {name, dueDate} = todoObject;
 
     const html = `
-    <div>
-    ${name}</div><div>${dueDate}</div>
     
+    <div>${name}</div>
+    <div>${dueDate}</div>
     <button onclick="todoList.splice(${i},1)
-    renderList();">
+    renderList();" class="dlt-btn">
     Delete
     </button>
     `;
@@ -40,5 +40,6 @@ function addName() {
   console.log(todoList);
 
   inputName.value = '';
+  inputDate.value = '';
   renderList();
 }
