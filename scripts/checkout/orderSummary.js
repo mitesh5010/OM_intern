@@ -4,6 +4,7 @@ import { formatCurrancy } from "../utils/money.js";
 // import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
 import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOptions.js";
 import { renderPaymetSummary } from './paymentSummary.js';
+import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 
 
 export function renderOrderSummary() {
@@ -27,7 +28,7 @@ export function renderOrderSummary() {
         const dateString = deliveryDate.format('dddd, MMMM D');
 
     cartSummryHtml += `
-    <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
+    <div class="cart-item-container js-cart-item-container js-cart-item-container-${matchingProduct.id}">
         <div class="delivery-date">
           Delivery date: ${dateString}
         </div>
@@ -43,14 +44,14 @@ export function renderOrderSummary() {
             <div class="product-price">
               $${formatCurrancy(matchingProduct.priceCents)}
             </div>
-            <div class="product-quantity">
+            <div class="product-quantity js-product-quantity-${productId}">
               <span>
                 Quantity: <span class="quantity-label">${cartItem.quantity}</span>
               </span>
               <span class="update-quantity-link link-primary">
                 Update
               </span>
-              <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
+              <span class="delete-quantity-link link-primary js-delete-link js-delete-link-${productId}" data-product-id="${matchingProduct.id}">
                 Delete
               </span>
             </div>
