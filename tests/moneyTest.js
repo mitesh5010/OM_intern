@@ -1,4 +1,4 @@
-import { formatCurrancy } from "../../scripts/utils/money.js";
+import { formatCurrancy } from "../scripts/utils/money.js";
 
 console.log('tests suite: format currancy');
 console.log('test case with nearest rouned number');
