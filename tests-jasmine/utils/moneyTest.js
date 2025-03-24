@@ -1,4 +1,4 @@
-import { formatCurrancy } from "../scripts/utils/money.js";
+import { formatCurrancy } from "../../scripts/utils/money.js";
 
 describe('test suite : formatCurrancy', () => {
   it('working with 0', () => {

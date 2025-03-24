@@ -1,4 +1,7 @@
-export let cart = JSON.parse(localStorage.getItem('cart'));
+export let cart;
+
+export function loadFromStorage() {
+  cart = JSON.parse(localStorage.getItem('cart'));
 if (!cart) {
  cart =[
 
@@ -12,6 +15,7 @@ if (!cart) {
     deliveryOptionsId : '2'
   }
 ];
+}
 }
 
 // update cart and store in local storage
