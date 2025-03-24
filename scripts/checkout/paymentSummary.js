@@ -57,6 +57,6 @@ export function renderPaymetSummary() {
       Place your order
     </button>
   `;
-  console.log(paymentSummaryHtml);
+  
   document.querySelector('.js-payment-summary').innerHTML = paymentSummaryHtml; 
 }
