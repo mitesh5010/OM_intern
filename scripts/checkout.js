@@ -3,19 +3,60 @@ import { renderPaymetSummary } from "./checkout/paymentSummary.js";
 // import   '../data/cart-class.js';
 // import '../data/backend-practice.js';
 import { loadProducts } from "../data/products.js";
+import { loadCart } from "../data/cart.js";
 
-// new Promise((resolve) => {
-//   loadProducts(()=>{
-//     resolve();
-//   });
-// }).then(() => {
-//   renderOrderSummary();
-//   renderPaymetSummary();
-// });
-//*
+Promise.all([
+  new Promise((resolve)=>{
+    loadProducts(()=>{
+      resolve();
+    })
+  }),
+  new Promise((resolve)=>{
+    loadCart(()=>{
+      resolve();
+    });
+  })
+]).then(()=>{
+  renderOrderSummary();
+  renderPaymetSummary();
+});
+
+/*
+new Promise((resolve) => {
+  loadProducts(() => {
+    resolve('value1');
+  });
+
+}).then((value) => {
+  console.log(value);
+
+  return new Promise((resolve) => {
+    loadCart(() => {
+      resolve();
+    });
+  });
+
+}).then(() => {
+  renderOrderSummary();
+  renderPaymetSummary();
+});
+*/
+
+/*
+new Promise((resolve) => {
+  loadProducts(()=>{
+    resolve();
+  });
+}).then(() => {
+  renderOrderSummary();
+  renderPaymetSummary();
+});
+*/
 
 
+/*
 loadProducts(() => {
   renderOrderSummary();
   renderPaymetSummary();
 });
+*/
