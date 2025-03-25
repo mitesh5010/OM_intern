@@ -17,7 +17,7 @@ export function renderOrderSummary() {
     const matchingProduct = getProduct(productId) ;
 
 
-    const deliveryOptionsId = cartItem.deliveryOptionsId;
+    const deliveryOptionsId = cartItem.deliveryOptionId;
 
     const deliveryOption = getDeliveryOption(deliveryOptionsId);
 
@@ -42,7 +42,7 @@ export function renderOrderSummary() {
               ${matchingProduct.name}
             </div>
             <div class="product-price">
-              $${formatCurrancy(matchingProduct.priceCents)}
+              ${matchingProduct.getPrice()}
             </div>
             <div class="product-quantity js-product-quantity-${productId}">
               <span>
