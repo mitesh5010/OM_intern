@@ -1,0 +1,35 @@
+<!-- <script src="index.js"></script> -->
+<!-- <script src="promises.js"></script> -->
+ <!-- <script src="p.js"></script> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="padding-bottom: 1000px ;">
+  
+
+ <ul id="parentList">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<script>
+  // Attach a single event listener to the parent
+  document.getElementById('parentList').addEventListener('click', function(event) {
+    // Check if the clicked element is an <li>
+    if (event.target.tagName === 'LI') {
+      console.log(`Clicked: ${event.target.textContent}`);
+    }
+  });
+
+  // Dynamically add a new item
+  const newItem = document.createElement('li');
+  newItem.textContent = 'Item 4';
+  document.getElementById('parentList').appendChild(newItem);
+</script>
+</body>
+</html>
