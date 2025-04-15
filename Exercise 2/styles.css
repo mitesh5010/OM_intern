@@ -1,0 +1,83 @@
+body{
+  background-color: rgb(84, 83, 88);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+}
+button{
+  padding: 10px 20px;
+  margin: 5px;
+  border: thick 1px 05px rgba(0, 0, 0, 0.575);
+  border-radius: 4px;
+  background-color: rgb(228, 238, 243);
+}
+.nav-btn.active {
+  background-color: #007BFF;
+  color: white;
+}
+
+.worldClockSection{
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-bottom: 10px;
+}
+#worldClockTimes{
+  color: white;
+  margin: 15px;
+  padding: 10px;
+  font-size: large;
+  
+}
+.country-time{
+  margin-bottom: 10px;
+
+}
+#fun{
+  margin: 20px;
+}
+
+.t-hour, .t-min , .t-sec{
+  margin-left: 45px;
+  padding-right: 28px;
+  color: rgb(233, 233, 233);
+ 
+}
+#countDown{
+  display: flex;
+  justify-content: center;
+
+  margin: 30px;
+  font-size: 60px;
+  margin-top: 0px;
+  
+}
+
+.hour,.min,.sec{
+  border: solid;
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: rgb(9, 47, 80);
+  color: white;
+  border-radius: 8px;
+}
+
+select {
+  appearance: none;
+  width: 100px;
+  font-size: 24px;
+  text-align: center;
+  
+}
+
+.list{
+  margin: auto;
+  height: 250px;
+  width: 300px;
+  border: solid;
+  padding: 10px;
+  border-radius: 5px;
+  background-color:rgb(173, 173, 173) ;
+  display: flex ;
+  justify-content: space-around;
+}
+

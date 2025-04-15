@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Timer, Stopwatch, and Alarm Application.</h1>
+  <div id="fun">
+    <button id="worldclock" class="nav-btn">World Clock</button>
+  <button id="timer" class="nav-btn">Timer</button>
+  <button id="stopwatch" class="nav-btn">Stopwatch</button>
+  <button id="alarm" class="nav-btn">Alarm</button>
+</div>
+
+<div id="worldClockSection">
+  <div id="worldClockTimes">
+  </div>
+</div>
+
+<div id="timerSection">
+
+  <div id="countDown">
+  
+  <select class="hour" id ='hourSelect' >01</select><select class="min" id="minSelect">52</select><select class="sec" id="secSelect">22</select>
+  
+</div>
+
+  <button id="start">Start</button>
+  <button id="pause">Pause</button>
+  <button id="reset">Reset</button>
+
+</div>
+<div id="stopwatchSection">
+  <h2>Stopwatch</h2>
+  <button id="startStopBtn">Start</button>
+  <button id="pauseBtn">Pause</button>
+  <button id="resetBtn">Reset</button>
+  <div id="display">00:00:00</div>
+  <button id="lapBtn">Laps</button>
+  <div class="list">
+      
+      <ul id="laps"></ul>
+  </div>
+</div>
+
+<div id="alarmSection">
+  <h2>Alarm</h2>
+  <div id="currentTime">00:00:00</div>
+  <input type="time" id="alarmTime" />
+  <br/>
+  <button id="setAlarmBtn">Set Alarm</button>
+  <button id="cancelAlarmBtn">Cancel Alarm</button>
+  <div id="alarmStatus"></div>
+</div>  
+  <script src="2.js"></script>
+</body>
+</html>
