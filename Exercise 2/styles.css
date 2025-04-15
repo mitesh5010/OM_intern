@@ -1,28 +1,30 @@
 body{
-  background-color: rgb(84, 83, 88);
+  background-color: #fff5d7;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align: center;
 }
 button{
   padding: 10px 20px;
   margin: 5px;
-  border: thick 1px 05px rgba(0, 0, 0, 0.575);
+  border: thick 1px 05px #ff5e6c;
   border-radius: 4px;
-  background-color: rgb(228, 238, 243);
+  background-color: transparent;
+  font:bold;
 }
 .nav-btn.active {
-  background-color: #007BFF;
-  color: white;
+  background-color: #ff5e6c;
+  color: black;
+  font-weight: bold;
 }
 
 .worldClockSection{
   display: flex;
   justify-content: center;
-  color: white;
+  color: black;
   margin-bottom: 10px;
 }
 #worldClockTimes{
-  color: white;
+  color: black;
   margin: 15px;
   padding: 10px;
   font-size: large;
@@ -56,7 +58,7 @@ button{
   border: solid;
   margin: 5px;
   padding: 5px 10px;
-  background-color: rgb(9, 47, 80);
+  background-color: #ffaaab;
   color: white;
   border-radius: 8px;
 }
@@ -69,15 +71,83 @@ select {
   
 }
 
-.list{
+/* .list{
   margin: auto;
   height: 250px;
   width: 300px;
   border: solid;
   padding: 10px;
   border-radius: 5px;
-  background-color:rgb(173, 173, 173) ;
+  background-color:#ffff;
   display: flex ;
   justify-content: space-around;
+} */
+
+#display{
+  margin: auto;
+  font-size: larger;
+  border: solid 2px;
+  border-radius: 5px;
+  width: 150px;
+  background-color: #ffff;
+  padding: 5px;
+  font-weight: bolder;
+}
+#lapBtn{
+  background-color: #ffaaab;
+  margin-bottom: 25px;
 }
 
+ul{
+  background-color: #ffff;
+  width: 250px;
+  margin: auto;
+  border: solid 1px white;
+  border-radius: 8px;
+  height: 300px;
+  padding-top: 10px;
+}
+
+#currentTime{
+  margin: auto;
+  margin-bottom: 20px;
+  border: solid 1px white;
+  background-color: #ffff;
+  width: 100px;
+  height: 50%;
+  padding: 10px;
+  border-radius: 55%;
+
+}
+
+input[type="time"] {
+  padding: 8px 12px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: #333;
+  width: 150px;
+  cursor: pointer;
+}
+
+/* Remove spinner in WebKit browsers */
+input[type="time"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+}
+
+#alarmTime{
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+#alarmStatus{
+  margin: auto;
+  margin-top: 15px;
+  border-top: solid 1px;
+  width: 200px;
+  padding: 10px;
+  color: #ffaaab;
+}

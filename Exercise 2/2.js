@@ -1,8 +1,15 @@
 document.addEventListener('DOMContentLoaded',()=>{
 
   const navButtons = document.querySelectorAll('.nav-btn');
+
+  function setActiveButton(clickedButton) {
+    navButtons.forEach(btn => btn.classList.remove('active'));
+    clickedButton.classList.add('active');
+  }
+
   //Navigation btn
-  document.getElementById('worldclock').addEventListener('click',()=>{
+  document.getElementById('worldclock').addEventListener('click',(e)=>{
+    setActiveButton(e.target);
     document.getElementById('worldClockSection').style.display = 'block';
     document.getElementById('timerSection').style.display = 'none';
     document.getElementById('stopwatchSection').style.display = 'none';
@@ -10,26 +17,31 @@ document.addEventListener('DOMContentLoaded',()=>{
     showWorldClock();
   });
 
-  document.getElementById('timer').addEventListener('click',()=>{
+  document.getElementById('timer').addEventListener('click',(e)=>{
+    setActiveButton(e.target);
     document.getElementById('worldClockSection').style.display = 'none';
     document.getElementById('timerSection').style.display = 'block';
     document.getElementById('stopwatchSection').style.display = 'none';
     document.getElementById('alarmSection').style.display = 'none';
   });
 
-  document.getElementById('stopwatch').addEventListener('click',()=>{
+  document.getElementById('stopwatch').addEventListener('click',(e)=>{
+    setActiveButton(e.target);
     document.getElementById('worldClockSection').style.display = 'none';
     document.getElementById('timerSection').style.display = 'none';
     document.getElementById('stopwatchSection').style.display = 'block';
     document.getElementById('alarmSection').style.display = 'none';
   });
 
-  document.getElementById('alarm').addEventListener('click',()=>{
+  document.getElementById('alarm').addEventListener('click',(e)=>{
+    setActiveButton(e.target);
     document.getElementById('worldClockSection').style.display = 'none';
     document.getElementById('timerSection').style.display = 'none';
     document.getElementById('stopwatchSection').style.display = 'none';
     document.getElementById('alarmSection').style.display = 'block';
   });
+
+  document.getElementById('worldclock').click();
 
 //WorldClock code start...
 
@@ -177,20 +189,29 @@ function stopStopwatch() {
       const seconds = time.getUTCSeconds().toString().padStart(2, '0');
       document.getElementById('display').textContent = `${hours}:${minutes}:${seconds}`;
     }
-
-    document.getElementById('startStopBtn').addEventListener('click', () => {
-      if (!timerInterval) {
-        startTime = Date.now() - elapsedTime;
+    function start() {
+      startTime = Date.now() - elapsedTime;
         timerInterval = setInterval(() => {
           elapsedTime = Date.now() - startTime;
           updateDisplay();
         }, 1000);
+    }
+
+    document.getElementById('startStopBtn').addEventListener('click', () => {
+      if (!timerInterval) {
+        start();
       }
     });
 
     document.getElementById('pauseBtn').addEventListener('click', () => {
+      if(timerInterval){
       clearInterval(timerInterval);
       timerInterval = null;
+      document.getElementById('pauseBtn').textContent = 'Resume';
+    }else{
+        document.getElementById('pauseBtn').textContent = 'Pause';
+        start();
+      }
     });
 
     document.getElementById('resetBtn').addEventListener('click', () => {
@@ -200,6 +221,7 @@ function stopStopwatch() {
       lapCounter = 1;
       updateDisplay();
       document.getElementById('laps').innerHTML = '';
+      document.getElementById('pauseBtn').textContent = 'Pause';
     });
 
     document.getElementById('lapBtn').addEventListener('click', () => {
@@ -257,7 +279,7 @@ function stopStopwatch() {
 
     // Update time every second
     setInterval(updateTime, 1000);
-    updateTime(); // Initial call to display time immediately
+    updateTime(); 
   }
   alarmSetup();
 });

@@ -14,6 +14,15 @@ function updateCounts(input) {
 
   const charCount = text.length;
   charCountD.textContent = charCount ;
+  if (charCount>200) {
+    charCountD.style.backgroundColor = 'red';
+    wordsCountD.style.backgroundColor = 'red';
+    linesCountD.style.backgroundColor = 'red';
+  }else{
+    charCountD.style.backgroundColor ='rgb(55, 196, 172)';
+    wordsCountD.style.backgroundColor = 'rgb(55, 196, 172)';
+    linesCountD.style.backgroundColor = 'rgb(55, 196, 172)';
+  }
 
   const words = text.trim().split(/\s+/).filter(word => word.length > 0);
   const wordsCount = words.length ;
