@@ -11,7 +11,7 @@ const queSection = document.getElementById('que-container');
 
 function renderQuiz() {
   
-queSection.innerHTML = '<h3>Questions<h3>';
+queSection.innerHTML = '<h3>Questions</h3>';
 
 if (!quiz.questions || quiz.questions.length === 0) {
   queSection.innerHTML += '<p>No questions available</p>';
