@@ -1,0 +1,62 @@
+body{
+
+}
+#paper-box{
+  border: solid 1px;
+  margin: auto;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 40px; 
+  border-radius: 5px;
+}
+
+/* #points{
+  float: right;
+} */
+
+#addQueBtn{
+  float: right;
+  background-color: rgb(126, 188, 239);
+  border: solid 2px rgb(185, 181, 181);
+  color: white;
+  padding: 6px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+#submitBtn{
+  background-color: rgb(46, 218, 46);
+  width: 80px;
+  padding: 5px;
+  border: solid 2px;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/*......*/
+#result{
+  display: none; /* Hidden initially */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* Modal content box */
+#result-details{
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+}
+

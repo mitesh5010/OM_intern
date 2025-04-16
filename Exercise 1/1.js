@@ -14,7 +14,7 @@ function updateCounts(input) {
 
   const charCount = text.length;
   charCountD.textContent = charCount ;
-  if (charCount>200) {
+  if (charCount>20) {
     charCountD.style.backgroundColor = 'red';
     wordsCountD.style.backgroundColor = 'red';
     linesCountD.style.backgroundColor = 'red';
@@ -47,10 +47,9 @@ function updateLetterDensity() {
   // Calculate total letter count
   const totalLetters = Array.from(charMap.values()).reduce((sum, count) => sum + count, 0);
 
-  // Clear existing options
+ 
   charSelect.innerHTML = '';
 
-  // Convert to array, sort by count (descending), then alphabetically for ties
   const sortedChars = Array.from(charMap.entries())
       .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 
