@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A-Loops</title>
+</head>
+<body>
+  <script>
+    // const arr = [10,true,40];
+    // console.log(arr);
+    // arr[3]=[1,5];
+    // arr.push('mitesh');
+    // console.log(arr);
+    // arr.splice(3,2);
+    // console.log(arr);
+
+    /*
+    let i = 0; 
+    while (i<5) {
+      console.log(i);
+      i+=1;
+    }
+    for (let i = 0; i < 5; i++) {
+      console.log(i%2);
+      
+    }
+    let a=0;
+    while (a<0.5) {
+      a=Math.random();console.log(a);
+    }
+    */
+
+    // const arr = ['mitesh','vishal','nitin']
+    // for (let i = 0; i < arr.length; i++) {
+    //   const element = arr[i];
+    //   console.log(element);
+    // }
+
+    /*
+    const arr = [2,3,5];
+    let sum = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+      const num = arr[i];
+      sum =sum+num;
+      
+    }
+    console.log(sum);
+
+    for (let i = 0; i < 10; i++) {
+      // const a = i%3;
+      // if (a!=0) {
+      //   continue;
+      // }
+
+      if(i%2 == 0) continue;//dose not count
+      console.log(i);
+      
+    }
+
+    function doubleArr(nums){
+      const numx2 = [];
+      for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        numx2.push(num*2);
+        
+      }
+      return numx2;
+    }
+
+    console.log(doubleArr([1,2]));
+
+    */
+
+    const arr = [ 'mitesh', 'vishal', 'nitin'];
+
+    arr.forEach(
+      function (value) {
+        console.log(value);
+      }
+    )
+  </script>
+</body>
+</html>
